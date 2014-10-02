@@ -136,8 +136,8 @@ module JavaBuildpack
         tags << result
       end
 
-      #fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
-      [detected, tags]
+      fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
+      [detected.first, tags]
     end
 
     def instantiate(components, additional_libraries, application, java_home, java_opts, root)
