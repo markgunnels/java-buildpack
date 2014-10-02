@@ -47,7 +47,8 @@ module JavaBuildpack
       tags = tags.flatten.compact.sort
 
       @logger.debug { "Detection Tags: #{tags}" }
-      tags
+      # tags
+      ["open-jdk-jre=1.8.0_20", "java-main"]
     end
 
     # Transforms the application directory such that the JRE, container, and frameworks can run the application
