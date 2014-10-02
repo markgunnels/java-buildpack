@@ -136,13 +136,16 @@ module JavaBuildpack
         tags << result
       end
 
-
       if type == "container" && detected.size > 1
-        [detected.first, tags]
+        detected_containers = []
+        detected_containers << detected.first
+
+        [detected_containers, tags]
       else
         fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
         [detected, tags]
       end
+
     end
 
     def instantiate(components, additional_libraries, application, java_home, java_opts, root)
