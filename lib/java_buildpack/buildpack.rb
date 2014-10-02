@@ -138,6 +138,7 @@ module JavaBuildpack
 
       if type == "container" && detected.size > 1
         detected_containers = []
+        puts detected.first
         detected_containers << detected.first
 
         [detected_containers, tags]
