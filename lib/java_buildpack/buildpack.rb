@@ -137,7 +137,7 @@ module JavaBuildpack
       end
 
 
-      if type = "container"
+      if type == "container" && detected.size > 1
         [detected.first, tags]
       else
         fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
