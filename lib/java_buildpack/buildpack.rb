@@ -47,8 +47,7 @@ module JavaBuildpack
       tags = tags.flatten.compact.sort
 
       @logger.debug { "Detection Tags: #{tags}" }
-      # tags
-      ["open-jdk-jre=1.8.0_20", "java-main"]
+      tags
     end
 
     # Transforms the application directory such that the JRE, container, and frameworks can run the application
@@ -137,7 +136,7 @@ module JavaBuildpack
         tags << result
       end
 
-      fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
+      #fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
       [detected, tags]
     end
 
