@@ -136,7 +136,7 @@ module JavaBuildpack
         tags << result
       end
 
-      fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
+      #fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
       [detected.first, tags]
     end
 
